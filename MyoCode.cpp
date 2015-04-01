@@ -153,6 +153,11 @@ public:
         std::cout << '\r';
         
         if (onArm) {
+            // Print out the lock state, the currently recognized pose, and which arm Myo is being worn on.         
+                    
+            // Pose::toString() provides the human-readable name of a pose. We can also output a Pose directly to an        
+            // output stream (e.g. std::cout << currentPose;). In this case we want to get the pose name's length so        
+            // that we can fill the rest of the field with spaces below, so we obtain it as a string using toString(). 
             std::string poseString = currentPose.toString();
             
             std::cout << '[' << (isUnlocked ? "unlocked" : "locked  ") << ']'
